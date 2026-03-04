@@ -1,7 +1,13 @@
-# Compiled class file
+# Compiled class files
 *.class
+bin/
 
-# Log file
+# Eclipse IDE files
+.project
+.classpath
+.settings/
+
+# Logs
 *.log
 
 # BlueJ files
