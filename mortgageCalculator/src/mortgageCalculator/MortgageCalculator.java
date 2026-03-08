@@ -21,13 +21,13 @@ public class MortgageCalculator {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
-		int principal = principal(scanner);
-		double annualInterestRate = annualInterestRate(scanner);
-		int period = period(scanner);
+		int principal = readPrincipal(scanner);
+		double annualInterestRate = readAnnualInterestRate(scanner);
+		int period = readPeriod(scanner);
 
-		double mortgage = mortgageCalculator(principal, annualInterestRate, period);
+		double mortgage = calculateMortgage(principal, annualInterestRate, period);
 
-		System.out.println("Mortgage: " + "$" + mortgage);
+		System.out.printf("Mortgage: $%.2f%n", mortgage);
 
 		scanner.close();
 	}
@@ -36,7 +36,7 @@ public class MortgageCalculator {
 	 * @param scanner
 	 * @return principal
 	 */
-	public static int principal(Scanner scanner) {
+	public static int readPrincipal(Scanner scanner) {
 		int principal;
 		while (true) {
 			System.out.print("Principal ($1k - $1M): ");
@@ -52,14 +52,14 @@ public class MortgageCalculator {
 	 * @param scanner
 	 * @return annualInterestRate
 	 */
-	public static double annualInterestRate(Scanner scanner) {
+	public static double readAnnualInterestRate(Scanner scanner) {
 		double annualInterestRate;
 		while (true) {
 			System.out.println("Annual Interest Rate: ");
 			annualInterestRate = scanner.nextDouble();
 			if (annualInterestRate <= 30 && annualInterestRate > 0)
 				break;
-			System.out.println("please enter a valid value greaterthan 0, and less than or equal to 30");
+			System.out.println("Please enter a value greater than 0 and less than or equal to 30!");
 		}
 		return annualInterestRate;
 	}
@@ -68,14 +68,14 @@ public class MortgageCalculator {
 	 * @param scanner
 	 * @return period
 	 */
-	public static int period(Scanner scanner) {
+	public static int readPeriod(Scanner scanner) {
 		int period;
 		while (true) {
 			System.out.println("Period (Years): ");
 			period = scanner.nextInt();
 			if (period >= 1 && period <= 30)
 				break;
-			System.out.println("Period (Years): " + period);
+			System.out.println("Enter a value between 1 and 30!");
 		}
 		return period;
 	}
@@ -86,7 +86,7 @@ public class MortgageCalculator {
 	 * @param period
 	 * @return mortgage
 	 */
-	public static double mortgageCalculator(int principal, double annualInterestRate, int period) {
+	public static double calculateMortgage(int principal, double annualInterestRate, int period) {
 		double i = annualInterestRate / 100 / 12;
 		int n = period * 12;
 
