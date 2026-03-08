@@ -2,96 +2,96 @@ package mortgageCalculator;
 
 import java.util.Scanner;
 
-// M = P [ i(1 + i)^n ] / [ (1 + i)^n – 1 ]
+// Mortgage =principal[ i(1 + i)^n ] / [ (1 + i)^n – 1 ]
 // M = Monthly Payment (Principal & Interest)
-// P = Principal Loan Amount (the total borrowed)
+//principal= Principal Loan Amount (the total borrowed)
 // i = Monthly Interest Rate (Annual Rate / 12)
 // n = Total Number of Payments (Loan Term in Years * 12)
 
 /**
- * TODO here we calculate the mortgage based on Principal (the amount) and annual interest and thhe
- * period of the mortgage.
+ * TODO here we calculate the mortgage based on Principal (the amount) and
+ * annual interest and the period of the mortgage.
  *
  * @author Elham.Mirzaei
  */
 public class MortgageCalculator {
-  /**
-   * @param args
-   */
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 
-    int principal = principle(scanner);
-    float anualInterestRate = annualInterestRate(scanner);
-    int period = period(scanner);
+		int principal = principal(scanner);
+		double annualInterestRate = annualInterestRate(scanner);
+		int period = period(scanner);
 
-    double M = mortgageCalculator(principal, anualInterestRate, period);
+		double mortgage = mortgageCalculator(principal, annualInterestRate, period);
 
-    System.out.println("Mortgate: " + "$" + M);
+		System.out.println("Mortgage: " + "$" + mortgage);
 
-    scanner.close();
-  }
+		scanner.close();
+	}
 
-  /**
-   * @param principal
-   * @param anualInterestRate
-   * @param period
-   * @return M
-   */
-  public static double mortgageCalculator(int principal, float anualInterestRate, int period) {
-    int P = principal;
-    double i = anualInterestRate / 100 / 12;
-    int n = period * 12;
+	/**
+	 * @param scanner
+	 * @return principal
+	 */
+	public static int principal(Scanner scanner) {
+		int principal;
+		while (true) {
+			System.out.print("Principal ($1k - $1M): ");
+			principal = scanner.nextInt();
+			if (principal >= 1000 && principal <= 1000000)
+				break;
+			System.out.println("Enter a number between 1000 and 1000000.");
+		}
+		return principal;
+	}
 
-    double M = P * (i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
-    return M;
-  }
+	/**
+	 * @param scanner
+	 * @return annualInterestRate
+	 */
+	public static double annualInterestRate(Scanner scanner) {
+		double annualInterestRate;
+		while (true) {
+			System.out.println("Annual Interest Rate: ");
+			annualInterestRate = scanner.nextDouble();
+			if (annualInterestRate <= 30 && annualInterestRate > 0)
+				break;
+			System.out.println("please enter a valid value greaterthan 0, and less than or equal to 30");
+		}
+		return annualInterestRate;
+	}
 
-  /**
-   * @param scanner
-   * @return period
-   */
-  public static int period(Scanner scanner) {
-    System.out.println("Period (Years): ");
-    int period = scanner.nextInt();
-    while (period > 30 || period < 1) {
-      System.out.println("please enter a value between 1 and 30");
-      System.out.println("Period (Years): ");
-      period = scanner.nextInt();
-    }
-    System.out.println("Period (Years): " + period);
-    return period;
-  }
+	/**
+	 * @param scanner
+	 * @return period
+	 */
+	public static int period(Scanner scanner) {
+		int period;
+		while (true) {
+			System.out.println("Period (Years): ");
+			period = scanner.nextInt();
+			if (period >= 1 && period <= 30)
+				break;
+			System.out.println("Period (Years): " + period);
+		}
+		return period;
+	}
 
-  /**
-   * @param scanner
-   * @return anualInterestRate
-   */
-  public static float annualInterestRate(Scanner scanner) {
-    System.out.println("Annual Interest Rate: ");
-    float anualInterestRate = scanner.nextFloat();
-    while (anualInterestRate > 30 || anualInterestRate <= 0) {
-      System.out.println("please enter a valid value greaterthan 0, and less than or equal to 30");
-      System.out.println("Annual Interest Rate: ");
-      anualInterestRate = scanner.nextFloat();
-    }
-    System.out.println("Annual Interest Rate: " + anualInterestRate);
-    return anualInterestRate;
-  }
+	/**
+	 * @param principal
+	 * @param annualInterestRate
+	 * @param period
+	 * @return mortgage
+	 */
+	public static double mortgageCalculator(int principal, double annualInterestRate, int period) {
+		double i = annualInterestRate / 100 / 12;
+		int n = period * 12;
 
-  /**
-   * @param scanner
-   * @return principal
-   */
-  public static int principle(Scanner scanner) {
-    System.out.println("Principal ($1k - $1M): ");
-    int principal = scanner.nextInt();
-    while (principal > 1000000 || principal < 1000) {
-      System.out.println("Enter a number between 1000 and 1000000.");
-      System.out.println("Principal ($1k - $1M): ");
-      principal = scanner.nextInt();
-    }
-    System.out.println("Principal entered: " + principal);
-    return principal;
-  }
+		double mortgage = principal * (i * Math.pow(1 + i, n)) / (Math.pow(1 + i, n) - 1);
+		return mortgage;
+	}
+
 }
