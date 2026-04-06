@@ -4,5 +4,5 @@
 /**
  * 
  */
-module javaPractice {
+module mortgageCalculator {
 }
