@@ -2,24 +2,9 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
-      <option name="id" value="conreleases" />
-      <option name="name" value="ConReleases" />
-      <option name="url" value="https://maven-repo.continentale.loc/artifactory/con-mvn-virtual/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="conarchetypes" />
-      <option name="name" value="conarchetypes" />
-      <option name="url" value="https://maven-repo.continentale.loc/artifactory/con-mvn-virtual/" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="central" />
-      <option name="name" value="central" />
-      <option name="url" value="https://maven-repo.continentale.loc/artifactory/con-mvn-virtual/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="conbomssnapshots" />
-      <option name="name" value="conbomssnapshots" />
-      <option name="url" value="https://maven-repo.continentale.loc/artifactory/con-mvn-virtual/" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
@@ -30,16 +15,6 @@
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="consnapshots" />
-      <option name="name" value="ConSnapshots" />
-      <option name="url" value="https://maven-repo.continentale.loc/artifactory/con-mvn-virtual/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="conboms" />
-      <option name="name" value="conboms" />
-      <option name="url" value="https://maven-repo.continentale.loc/artifactory/con-mvn-virtual/" />
     </remote-repository>
   </component>
 </project>
