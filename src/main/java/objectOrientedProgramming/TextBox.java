@@ -1,4 +1,4 @@
-package mortgageCalculator;
+package objectOrientedProgramming;
 
 public class TextBox {
 	public String text = "";
