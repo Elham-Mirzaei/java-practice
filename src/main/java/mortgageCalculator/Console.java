@@ -2,7 +2,7 @@ package mortgageCalculator;
 
 import java.util.Scanner;
 
-public class GetInput {
+public class Console {
     public static double readNumber(String prompt, double min, double max) {
         Scanner scanner = new Scanner(System.in);
         double value;

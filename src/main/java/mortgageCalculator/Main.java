@@ -1,6 +1,6 @@
 package mortgageCalculator;
 
-import static mortgageCalculator.GetInput.readNumber;
+import static mortgageCalculator.Console.readNumber;
 import static mortgageCalculator.MortgageCalculator.calculateMortgage;
 import static mortgageCalculator.PrintOutput.printOutput;
 
