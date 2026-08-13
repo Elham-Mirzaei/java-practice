@@ -1,5 +1,8 @@
-mortgageCalculator\Browser.class
-mortgageCalculator\Employee.class
-mortgageCalculator\Main.class
-mortgageCalculator\TextBox.class
-mortgageCalculator\MortgageCalculator.class
+mortgageCalculator/Main.class
+mortgageCalculator/Console.class
+objectOrientedProgramming/Main.class
+objectOrientedProgramming/TextBox.class
+objectOrientedProgramming/Browser.class
+mortgageCalculator/MortgageReport.class
+mortgageCalculator/MortgageCalculator.class
+objectOrientedProgramming/Employee.class
