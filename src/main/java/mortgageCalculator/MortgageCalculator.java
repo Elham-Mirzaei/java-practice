@@ -39,4 +39,13 @@ public class MortgageCalculator {
     private static double getMonthlyInterestRate(double annualInterestRate) {
         return annualInterestRate / 100 / 12;
     }
+
+    public double[] getRemainingBalances() {
+        var balances = new double[getNumberOfPayments()];
+        for (int month = 1; month <= getNumberOfPayments(); month++) {
+            double balance = calculateBalance(month);
+            balances[month -1] = balance;
+        }
+        return balances;
+    }
 }

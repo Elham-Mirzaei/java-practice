@@ -7,9 +7,7 @@ public class MortgageReport  {
         System.out.printf("Monthly Payments: $%.2f%n%n", mortgage);
         System.out.printf("PAYMENT SCHEDULE%n");
         System.out.printf("----------------%n");
-        for (int month = 1; month <= calculator.getNumberOfPayments(); month++) {
-            double balance = calculator.calculateBalance(month);
+        for (double balance : calculator.getRemainingBalances())
             System.out.printf("$%.2f%n", balance);
-        }
     }
 }
