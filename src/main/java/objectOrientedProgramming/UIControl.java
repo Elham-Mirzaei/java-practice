@@ -3,11 +3,13 @@ package objectOrientedProgramming;
 public class UIControl {
     boolean isEnabled = true;
 
-    public UIControl(boolean inEnabled) {
-        this.isEnabled = isEnabled();
-        System.out.println("UIControl");
-    }
+//    public UIControl(boolean inEnabled) {
+//        this.isEnabled = isEnabled();
+//    }
 
+    public void render(){
+
+    }
     public void enable(){
         isEnabled = true;
     }

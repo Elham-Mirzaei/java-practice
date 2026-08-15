@@ -1,8 +1,12 @@
 package objectOrientedProgramming;
 
+import org.w3c.dom.Text;
+
 public class Main {
 
         public static void main (String[] args){
-                var textBox = new TextBox();
-                }
+            UIControl[] controls = {new TextBox(), new CheckBox()};
+            for (var control : controls)
+                control.render();
+        }
     }
